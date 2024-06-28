@@ -12,3 +12,14 @@ class User(UserBase):
 
     class Config:
         orm_mode = True
+
+class Token(BaseModel):
+    access_token: str
+    refresh_token: str
+
+
+class TokenData(BaseModel):
+    user_id: str = None
+
+class TokenRefresh(BaseModel):
+    refresh_token: str

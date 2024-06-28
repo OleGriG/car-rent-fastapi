@@ -10,6 +10,9 @@ from app.core.utils import hash_password
 from app.core.config import settings
 
 class UserRepository(Repository):
+    def __init__(self):
+        super().__init__(User)
+
     @staticmethod
     def create_user(db: Session, user_create: UserCreate):
         hashed_password = hash_password(user_create.password)

@@ -10,3 +10,4 @@ class User(Base):
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
     orders = relationship("Order", back_populates="user")
+
